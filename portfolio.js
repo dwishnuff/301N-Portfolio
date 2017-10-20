@@ -1,4 +1,5 @@
-function Projects (projObj) {
+//object constructor
+var Project = function (projObj) {
   this.title = projObj.title;
   this.summary = projObj.summary;
   this.link = projObj.link;

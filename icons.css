@@ -68,3 +68,6 @@
 .icon-github:before {
 	content: "\e907";
 }
+.icon-files-empty:before {
+	content: "\e925";
+}
