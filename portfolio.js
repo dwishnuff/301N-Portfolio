@@ -6,4 +6,4 @@ var Project = function (projObj) {
   this.image = projObj.image;
   this.datePub = projObj.datePub;
   this.tech = projObj.tech;
-  }
+}
