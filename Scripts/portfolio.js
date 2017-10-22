@@ -1,3 +1,5 @@
+"use strict";
+
 //object constructor
 var Project = function (projObj) {
   this.title = projObj.title;
