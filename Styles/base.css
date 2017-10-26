@@ -1,9 +1,21 @@
 @import "icons.css";
-@import "layout.css"; /*may get added later*/
+/*@import "layout.css"; /*may get added later*/
 @import "modules.css";
 @import "desktop.css" (min-width: 850px);
 
 
 .img {
   max-width: 100%;
+}
+
+.template {
+  display: none;
+}
+
+.tech:before {
+  content: "Technology Used: ";
+}
+
+.publishInfo:before {
+  content: "Published On: ";
 }
