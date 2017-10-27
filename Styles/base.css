@@ -2,6 +2,7 @@
 /*@import "layout.css"; /*may get added later*/
 @import "modules.css";
 @import "desktop.css" (min-width: 850px);
+@import url('https://fonts.googleapis.com/css?family=Amatic+SC|Anonymous+Pro|Cutive+Mono|Fira+Mono|Patrick+Hand+SC');
 
 
 .img {
@@ -19,3 +20,54 @@
 .publishInfo:before {
   content: "Published On: ";
 }
+
+body {
+  font-family: 'Fira Mono', monospace;
+  line-height: 1.5;
+  font-size: 100%;
+}
+
+hr {
+  background-color: #FC4A1A;
+  color: #FC4A1A;
+}
+
+.titleBlock {
+  background: #4ABDAC;
+  color: #DFDCE3;
+  font-family: 'Amatic SC', cursive;
+  font-size: 4em;
+}
+
+/*LINK STYLES
+=======================================*/
+
+a, a:link {
+  text-decoration: none;
+  color: #777;
+}
+a:visited {
+  color: #FC4A1A;
+}
+
+a:hover, a:focus {
+  color: #F7B733;
+}
+
+a:active {
+  text-decoration: none;
+  color: #777;
+}
+
+
+/*font-family: 'Fira Mono', monospace;
+font-family: 'Patrick Hand SC', cursive;
+font-family: 'Cutive Mono', monospace;
+font-family: 'Anonymous Pro', monospace;
+font-family: 'Amatic SC', cursive;*/
+
+/*color schemes
+#4ABDAC green
+#FC4A1A orange
+#F7B733 gold
+#DFDCE3 grey
