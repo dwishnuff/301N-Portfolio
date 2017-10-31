@@ -3,6 +3,13 @@
 // Configure a view object, to hold all our functions for dynamic updates and article-related event handlers.
 var projectView = {};
 
+projectView.populateFilters= function () {
+  var allTechUsed = [];
+  projects.forEach(function(entireProject) {
+    allTechUsed = allTechUsed.concat(entireProject.getTechnologies());
+  })
+  //add JS de-duplicating code;
+}
 // projectView.populateFilters = function() {
 //   $('article').each(function() {
 //     var authorName, category, optionTag;
