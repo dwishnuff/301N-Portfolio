@@ -3,40 +3,43 @@
 // Configure a view object, to hold all our functions for dynamic updates and article-related event handlers.
 var projectView = {};
 
+
+//function to remove duplicates from an Array, will be called in populateFilters below.
+//pulled from stackexchange: https://codereview.stackexchange.com/questions/60128/removing-duplicates-from-an-array-quickly
+Array.prototype.unique = function() {
+  return this.reduce(function(accum, current) {
+    if (accum.indexOf(current) < 0) {
+      accum.push(current);
+    }
+    return accum;
+  }, []);
+}
+
 projectView.populateFilters= function () {
-  var allTechUsed = [];
+  let allTechUsed = [];
   projects.forEach(function(entireProject) {
     allTechUsed = allTechUsed.concat(entireProject.getTechnologies());
   })
-  //add JS de-duplicating code;
+  allTechUsed=allTechUsed.unique();
+
+  allTechUsed.forEach(function(addTech) {
+
+    let optionTag =`<option value ="${addTech}">${addTech}</option>`;
+    $('#tech-filter').append(optionTag);
+  })
 }
-// projectView.populateFilters = function() {
-//   $('article').each(function() {
-//     var authorName, category, optionTag;
-//     if (!$(this).hasClass('template')) {
-//       // REVIEW: We need to take every author name from the page, and make it an option in the Author filter.
-//       //       To do so, Build an `option` DOM element that we can append to the author select box.
-//       //       Start by grabbing the author's name from an attribute in `this` article element,
-//       //       and then use that bit of text to create the option tag (in a variable named `optionTag`),
-//       //       that we can append to the #author-filter select element.
-//       authorName = $(this).attr('data-author');
-//       optionTag = '<option value="' + authorName + '">' + authorName + '</option>';
-//
-//       if ($('#author-filter option[value="' + authorName + '"]').length === 0) {
-//         $('#author-filter').append(optionTag);
-//       }
-//
-//       // REVIEW: Similar to the above, but...
-//       //       Avoid duplicates! We don't want to append the category name if the select
-//       //       already has this category as an option!
-//       category = $(this).attr('data-category');
-//       optionTag = '<option value="' + category + '">' + category + '</option>';
-//       if ($('#category-filter option[value="' + category + '"]').length === 0) {
-//         $('#category-filter').append(optionTag);
-//       }
-//     }
-//   });
-// };
+
+projectView.handleTechFilter = function () {
+  $('#tech-filter').on('change', function() {
+    if ($(this).val()) {
+      $('article').hide();
+      // console.log($this).val());
+      $('article[data-category*="' +$(this).val() +'"]').fadeIn(1000);
+    } else {
+      $('article').show();
+    }
+  })
+}
 //
 // projectView.handleAuthorFilter = function() {
 //   $('#author-filter').on('change', function() {
@@ -46,7 +49,7 @@ projectView.populateFilters= function () {
 //     if ($(this).val()) {
 //       $('.article-body').hide();
 //       console.log($(this).val());
-//       $('article[data-author="' + $(this).val() +'"] .article-body').fadeIn(1000);
+//       $('article[data-author*="' + $(this).val() +'"] .article-body').fadeIn(1000);
 //       // TODO: If the select box was changed to an option that has a value, we need to hide all the articles,
 //       //       and then show just the ones that match for the author that was selected.
 //       //       Use an "attribute selector" to find those articles, and fade them in for the reader.
@@ -107,7 +110,8 @@ projectView.setTeasers = function() {
 
 $(document).ready(function() {
   projectView.setTeasers();
-  // articleView.populateFilters();
+  projectView.populateFilters();
+  projectView.handleTechFilter();
   // articleView.handleAuthorFilter();
   // articleView.handleCategoryFilter();
   projectView.handleMainNav();
