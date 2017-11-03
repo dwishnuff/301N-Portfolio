@@ -17,23 +17,30 @@ Project.prototype.getTechnologies = function () {
 
 //clone template and fill template
 Project.prototype.toHtml = function() {
-  var $newProject = $('article.template').clone();
+  // var $newProject = $('article.template').clone();
+//handlebars template:
+var templateFiller = Handlebars.compile($('#projects-template').html());
 
-  $newProject.removeClass('template');
+this.daysAgo = parseInt((new Date() - new Date(this.publishedOn))/60/60/24/1000);
+this.publishStatus =  ` (${this.daysAgo} days ago)`;
 
-  $newProject.attr('data-category', this.techUsed);
-
-  $newProject.find("header h1 a").text(this.title).attr("href", this.link);
-  $newProject.find(".projInfo time").text(this.publishedOn);
-  $newProject.find(".tech").text($newProject.find(".tech").text()+this.techUsed);
-  $newProject.find(".projSummary img").html(this.image);
-  $newProject.find(".projSummary p").html(this.summary);
-
-  // Display the date as a relative number of 'days ago'
-  $newProject.find('.daysAgo').text('(' + parseInt((new Date() - new Date(this.publishedOn))/60/60/24/1000) + ' days ago)');
-  $newProject.append('<hr>');
-
-  return $newProject;
+var filledTemplate =templateFiller (this);
+return filledTemplate;
+  // $newProject.removeClass('template');
+  //
+  // $newProject.attr('data-category', this.techUsed);
+  //
+  // $newProject.find("header h1 a").text(this.title).attr("href", this.link);
+  // $newProject.find(".projInfo time").text(this.publishedOn);
+  // $newProject.find(".tech").text($newProject.find(".tech").text()+this.techUsed);
+  // $newProject.find(".projSummary img").html(this.image);
+  // $newProject.find(".projSummary p").html(this.summary);
+  //
+  // // Display the date as a relative number of 'days ago'
+  // $newProject.find('.daysAgo').text('(' + parseInt((new Date() - new Date(this.publishedOn))/60/60/24/1000) + ' days ago)');
+  // $newProject.append('<hr>');
+  //
+  // return $newProject;
 }
 
 //sort array of sample projects by date

@@ -34,7 +34,7 @@ projectView.handleTechFilter = function () {
     if ($(this).val()) {
       $('article').hide();
       // console.log($this).val());
-      $('article[data-category*="' +$(this).val() +'"]').fadeIn(1000);
+      $(`article[data-category*="${$(this).val()}"]`).fadeIn(1000);
     } else {
       $('article').show();
     }
