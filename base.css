@@ -1,9 +1,0 @@
-@import "icons.css";
-@import "layout.css";
-@import "modules.css";
-@import "desktop.css" (min-width: 850px);
-
-
-.img {
-  max-width: 100%;
-}
