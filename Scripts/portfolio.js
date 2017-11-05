@@ -11,11 +11,17 @@ var Project = function (projObj) {
   this.techUsed = projObj.techUsed;
 }
 
+Project.prototype.getTechnologies = function () {
+  return this.techUsed.split(", ");
+}
+
 //clone template and fill template
 Project.prototype.toHtml = function() {
   var $newProject = $('article.template').clone();
 
   $newProject.removeClass('template');
+
+  $newProject.attr('data-category', this.techUsed);
 
   $newProject.find("header h1 a").text(this.title).attr("href", this.link);
   $newProject.find(".projInfo time").text(this.publishedOn);
