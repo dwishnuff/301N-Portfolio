@@ -9,6 +9,7 @@ var Project = function (projObj) {
   this.image = projObj.image;
   this.publishedOn = projObj.publishedOn;
   this.techUsed = projObj.techUsed;
+  this.overlay = projObj.overlay;
 }
 
 Project.prototype.getTechnologies = function () {

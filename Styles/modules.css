@@ -31,17 +31,40 @@ i
   border-bottom: 1px solid #ccc;
 }
 
+/*https://www.impressivewebs.com/image-tint-blend-css/*/
 .tinted-image {
+  position: relative;
+float: left;
+height: 225px;
+width: 285px;
+margin-top: 0;
+}
 
-  width: 300px;
-  height: 200px;
+.overlay {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left:0;
 
-  background:
-    /* top, transparent red */
-    linear-gradient(
-      rgba(255, 0, 0, 0.45),
-      rgba(255, 0, 0, 0.45)
-    ),
-    /* bottom, image */
-    url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/3/owl1.jpg);
+}
+
+.tinted-image img {
+  width: inherit;
+  height: inherit;
+}
+
+.projSummary h1 a {
+  color: #DFDCE3;
+  text-shadow: #777 1px 0 10px; /* color | offset-x | offset-y | blur-radius */
+}
+
+.projSummary h1 a:visited {
+  color: #eea309;
+  text-shadow: #FFFFFF 10px 10px 0px;
+}
+
+.projSummary h1 a:hover {
+  color: #777;
+  text-shadow: #DFDCE3 1px 0 10px;
 }
