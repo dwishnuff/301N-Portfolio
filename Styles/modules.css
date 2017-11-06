@@ -54,14 +54,14 @@ margin-top: 0;
   height: inherit;
 }
 
-.projSummary h1 a {
+.projSummary h1 a:link {
   color: #DFDCE3;
   text-shadow: #777 1px 0 10px; /* color | offset-x | offset-y | blur-radius */
 }
 
 .projSummary h1 a:visited {
   color: #eea309;
-  text-shadow: #FFFFFF 10px 10px 0px;
+  text-shadow: #FFFFFF 1px 0 10px;
 }
 
 .projSummary h1 a:hover {

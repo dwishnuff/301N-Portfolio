@@ -57,20 +57,7 @@
             <option value="">-- Filter by Technology --</option>
           </select>
         </div>
-        <!-- <article class="template" data-category="cat">
-        <header>
-        <h1><a>Title</a></h1>
-        <div class="projInfo">
-        <p class =publishInfo><time pubdate datetime="2000-01-01"></time> <span class=daysAgo></span></p>
-        <p class=tech></p>
-      </div>
-    </header>
-    <section class="projSummary">
-    <img>Picture goes here</img>
-    <p>Summary</p>
-  </section>
-  <a href="#" class="read-on">More &rarr;</a>
-</article> -->
+
 </section>
 <section id="about" class="tab-content">
   <header>
@@ -87,11 +74,15 @@
   <footer>
     &copy; 2017  | danielle w. beyer | do what challenges you
   </footer>
-  <script type="text/javascript" src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.11/handlebars.min.js"></script>
-  <script type="text/javascript" src="scripts/projects.js"></script>
+  <!-- <script type="text/javascript" src="scripts/projects.js"></script> -->
   <script type="text/javascript" src="scripts/portfolio.js"></script>
   <script type="text/javascript" src="scripts/projectView.js"></script>
+  <script>
+  console.log("run fetch all");
+  Project.fetchAll();
+  </script>
 </body>
 
 </html>

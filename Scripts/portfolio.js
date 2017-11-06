@@ -1,5 +1,6 @@
 
-var projects =[];
+
+
 
 //object constructor
 var Project = function (projObj) {
@@ -12,6 +13,8 @@ var Project = function (projObj) {
   this.overlay = projObj.overlay;
 }
 
+Project.all =[];
+
 Project.prototype.getTechnologies = function () {
   return this.techUsed.split(", ");
 }
@@ -19,14 +22,14 @@ Project.prototype.getTechnologies = function () {
 //clone template and fill template
 Project.prototype.toHtml = function() {
   // var $newProject = $('article.template').clone();
-//handlebars template:
-var templateFiller = Handlebars.compile($('#projects-template').html());
+  //handlebars template:
+  const templateFiller = Handlebars.compile($('#projects-template').html());
 
-this.daysAgo = parseInt((new Date() - new Date(this.publishedOn))/60/60/24/1000);
-this.publishStatus =  ` (${this.daysAgo} days ago)`;
+  this.daysAgo = parseInt((new Date() - new Date(this.publishedOn))/60/60/24/1000);
+  this.publishStatus =  ` (${this.daysAgo} days ago)`;
 
-var filledTemplate =templateFiller (this);
-return filledTemplate;
+
+  return templateFiller(this);
   // $newProject.removeClass('template');
   //
   // $newProject.attr('data-category', this.techUsed);
@@ -44,15 +47,37 @@ return filledTemplate;
   // return $newProject;
 }
 
-//sort array of sample projects by date
-sampleProjects.sort(function(a,b) {
-return (new Date(b.publishedOn)) - (new Date(a.publishedOn));
-});
+Project.loadAll = function (sampleProjects) {
+  //sort array of sample projects by date
+  sampleProjects.sort(function(a,b) {
+    return (new Date(b.publishedOn)) - (new Date(a.publishedOn));
+  });
 
-sampleProjects.forEach(function(projectObject) {
-  projects.push(new Project(projectObject));
-});
+  sampleProjects.forEach(function(projectObject) {
+    Project.all.push(new Project(projectObject));
+  });
 
-projects.forEach(function(projectSample) {
-  $('#projSection').append(projectSample.toHtml());
-});
+  // Project.all.forEach(function(projectSample) {
+  //   $('#projSection').append(projectSample.toHtml());
+  // })
+}
+
+Project.fetchAll = function() {
+  if (localStorage.sampleProjects) {
+    console.log("localStorage exists");
+    Project.loadAll(JSON.parse(localStorage.sampleProjects));
+    projectView.initIndexPage();
+  } else {
+    console.log("localStorage doesn't exist");
+    $.getJSON("/data/projects.json", function(data) {
+      console.log(data);
+      localStorage.setItem ('sampleProjects', JSON.stringify(data));
+      Project.loadAll(data);
+      projectView.initIndexPage();
+    }).fail(function(error) {
+      console.log ("error");
+      console.log(JSON.parse(error.responseText));
+    })
+
+  }
+}
