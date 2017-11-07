@@ -5,8 +5,11 @@
 @import url('https://fonts.googleapis.com/css?family=Amatic+SC|Anonymous+Pro|Cutive+Mono|Fira+Mono|Patrick+Hand+SC');
 
 
-.img {
-  max-width: 100%;
+
+.social {
+  float:right;
+  display: inline-block;
+  vertical-align: middle;
 }
 
 .template {
@@ -37,8 +40,14 @@ hr {
   color: #DFDCE3;
   font-family: 'Amatic SC', cursive;
   font-size: 4em;
+  display: inline-block;
+  width: 100%;
 }
 
+article {
+  min-height: 250px;
+  margin-top: 20px;
+}
 /*LINK STYLES
 =======================================*/
 
@@ -88,7 +97,8 @@ font-family: 'Anonymous Pro', monospace;
 font-family: 'Amatic SC', cursive;*/
 
 /*color schemes
-#4ABDAC green
-#FC4A1A orange
-#F7B733 gold
-#DFDCE3 grey
+#4ABDAC green rgb 74 189 172
+#FC4A1A orange rgb 252, 74, 26
+  #eea309 one shade darker gold
+#F7B733 gold rgb 247, 183, 51
+#DFDCE3 grey rgb 223, 220, 227

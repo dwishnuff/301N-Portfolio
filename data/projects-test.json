@@ -1,0 +1,11 @@
+[
+  {
+    "title":  "Sample Project 1 - Yahoo",
+    "link":   "http://www.yahoo.com",
+    "publishedOn": "2017-01-01",
+    "techUsed": "JavaScript, jQuery, HTML, CSS",
+    "image":  "./Images/lasers.jpeg",
+    "overlay": "rgba(74, 189, 172, 0.8)"
+  }
+
+]

@@ -17,7 +17,7 @@ Array.prototype.unique = function() {
 
 projectView.populateFilters= function () {
   let allTechUsed = [];
-  projects.forEach(function(entireProject) {
+  Project.all.forEach(function(entireProject) {
     allTechUsed = allTechUsed.concat(entireProject.getTechnologies());
   })
   allTechUsed=allTechUsed.unique();
@@ -108,11 +108,15 @@ projectView.setTeasers = function() {
   })
 }
 
-$(document).ready(function() {
+projectView.initIndexPage = function() {
+  console.log("start init index page");
+  Project.all.forEach(function(project) {
+    $("#projSection").append(project.toHtml())
+  });
   projectView.setTeasers();
   projectView.populateFilters();
   projectView.handleTechFilter();
   // articleView.handleAuthorFilter();
   // articleView.handleCategoryFilter();
   projectView.handleMainNav();
-})
+};
