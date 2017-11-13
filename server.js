@@ -38,7 +38,7 @@ app.get('/projects', function(request, response) {
 app.post('/projects', function(request, response) {
   client.query(
     `INSERT INTO
-    projects(title, image, "link", techUsed, "publishedOn", summary, overlay)
+    projects(title, image, "link", "techUsed", "publishedOn", summary, overlay)
     VALUES ($1, $2, $3, $4, $5, $6, $7);
     `,
     [
@@ -63,7 +63,7 @@ app.put('/projects/:id', function(request, response) {
   client.query(
     `UPDATE projects
     SET
-      title=$1, image=$2, "link"=$3, techUsed=$4, "publishedOn"=$5, summary=$6, overlay=$7
+      title=$1, image=$2, "link"=$3, "techUsed"=$4, "publishedOn"=$5, summary=$6, overlay=$7
     WHERE project_id=$8;
     `,
     [
@@ -124,10 +124,13 @@ function loadProjects() {
   .then(result => {
     if(!parseInt(result.rows[0].count)) {
       fs.readFile('./public/data/projects.json', (err, fd) => {
+if (err) {
+  console.log (err);
+}
         JSON.parse(fd.toString()).forEach(ele => {
           client.query(`
             INSERT INTO
-            projects(title, image, "link", techUsed, "publishedOn", summary, overlay)
+            projects(title, image, "link", "techUsed", "publishedOn", summary, overlay)
             VALUES ($1, $2, $3, $4, $5, $6, $7);
           `,
             [ele.title, ele.image, ele.link, ele.techUsed, ele.publishedOn, ele.summary, ele.overlay]
@@ -145,10 +148,10 @@ function loadDB() {
       image VARCHAR (255),
       title VARCHAR(255) NOT NULL,
       "link" VARCHAR (255),
-      techUsed VARCHAR(255),
+      "techUsed" VARCHAR(255),
       "publishedOn" DATE,
       summary TEXT NOT NULL,
-      overlay VARCHAR(20));`
+      overlay VARCHAR(255));`
     )
     .then(function() {
       loadProjects();

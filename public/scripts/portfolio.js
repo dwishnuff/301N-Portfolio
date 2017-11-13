@@ -10,6 +10,7 @@
 // }
 
 function Project (projObj) {
+  console.log(projObj);
   Object.keys(projObj).forEach(function(key) {
     this[key] = projObj[key];
   }, this);
@@ -18,6 +19,7 @@ function Project (projObj) {
 Project.all =[];
 
 Project.prototype.getTechnologies = function () {
+  console.log(this.techUsed);
   return this.techUsed.split(", ");
 }
 
