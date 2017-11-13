@@ -1,5 +1,4 @@
 
-
 var sampleProjects = [
   {
     title:  'Sample Project 1 - Yahoo',
