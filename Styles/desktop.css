@@ -33,3 +33,23 @@ h4  {
   font-size: 1.125em;
   line-height: 1.2222em;
 }
+
+.headerBlock {
+  display: flex;
+  flex-direction: row;
+  background: #4ABDAC;
+  width: 100%;
+
+}
+
+
+
+/*----images in grid:----*/
+#projectsContainer {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+#projectsContainer>article {
+  max-width: 30%;
+}

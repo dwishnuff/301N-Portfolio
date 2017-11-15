@@ -30,6 +30,12 @@ body {
   font-size: 100%;
 }
 
+.standard {
+  font-family: 'Fira Mono', monospace;
+  line-height: 1.25em;
+  font-size: 100%;
+}
+
 hr {
   background-color: #FC4A1A;
   color: #FC4A1A;
@@ -37,7 +43,7 @@ hr {
 
 .titleBlock {
   background: #4ABDAC;
-  color: #DFDCE3;
+  color: ##38323f;
   font-family: 'Amatic SC', cursive;
   font-size: 4em;
   display: inline-block;
@@ -72,6 +78,7 @@ a:active {
 h1  {
   font-size: 2em;
   line-height: 1.25em;
+  color: #38323f;
 }
 
 h2  {
@@ -102,3 +109,4 @@ font-family: 'Amatic SC', cursive;*/
   #eea309 one shade darker gold
 #F7B733 gold rgb 247, 183, 51
 #DFDCE3 grey rgb 223, 220, 227
+#38323f dark grey rgb(56,50,63)

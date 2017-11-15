@@ -33,7 +33,7 @@
 .icon-stack:before {
   content: "\e92e";
 }
-.icon-folder-download:before {
+.icon-folder-download:after {
   content: "\e933";
 }
 .icon-menu:before {
