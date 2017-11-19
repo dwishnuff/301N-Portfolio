@@ -1,16 +1,4 @@
-//object constructor
-// var Project = function (projObj) {
-//   this.title = projObj.title;
-//   this.summary = projObj.summary;
-//   this.link = projObj.link;
-//   this.image = projObj.image;
-//   this.publishedOn = projObj.publishedOn;
-//   this.techUsed = projObj.techUsed;
-//   this.overlay = projObj.overlay;
-// }
-
 function Project (projObj) {
-  console.log(projObj);
   Object.keys(projObj).forEach(function(key) {
     this[key] = projObj[key];
   }, this);
@@ -27,7 +15,9 @@ Project.prototype.getTechnologies = function () {
 Project.prototype.toHtml = function() {
   //handlebars template:
   const templateFiller = Handlebars.compile($('#projects-template').html());
-
+console.log(this.publishedOn);
+var publishedDate = new Date(this.publishedOn);
+this.publishedDate = moment(this.publishedOn).format("Do MMM YY");
   this.daysAgo = parseInt((new Date() - new Date(this.publishedOn))/60/60/24/1000);
   this.publishStatus =  ` (${this.daysAgo} days ago)`;
 

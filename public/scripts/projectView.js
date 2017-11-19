@@ -72,7 +72,7 @@ projectView.setTeasers = function() {
 projectView.initIndexPage = function() {
   console.log("start init index page");
   Project.all.forEach(function(project) {
-    $("#projSection").append(project.toHtml())
+    $("#projectsContainer").append(project.toHtml())
   });
   projectView.setTeasers();
   projectView.populateFilters();
