@@ -33,3 +33,13 @@ h4  {
   font-size: 1.125em;
   line-height: 1.2222em;
 }
+
+/*----images in grid:----*/
+#projectsContainer {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+#projectsContainer>article {
+  max-width: 30%;
+}

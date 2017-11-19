@@ -19,7 +19,7 @@
         <header>
 
           <div class="projInfo">
-            Published: {{publishedOn}}{{publishStatus}}<br>
+            Published: {{publishedDate}}{{publishStatus}}<br>
             Technology Used: {{techUsed}}
           </div>
         </header>
@@ -35,18 +35,20 @@
   </head>
   <body>
     <header>
-      <h1 class="titleBlock"> danielle w. beyer</h1>
-      <h2 class="social">
-        <a href="https://www.linkedin.com/in/dwbeyer/" class="icon-linkedin">  </a>
-        <a href="https://github.com/dwishnuff" class="icon-github"> </a>
-      </h2>
+      <div class="headerBlock">
+        <h1 class="titleBlock"> danielle w. beyer</h1>
+        <h2 class="social">
+          <a href="https://www.linkedin.com/in/dwbeyer/" class="icon-linkedin">  </a>
+          <a href="https://github.com/dwishnuff" class="icon-github"> </a>
+        </h2>
+      </div>
       <nav class="main-nav">
         <span class="icon icon-menu"></span>
 
         <ul>
-          <li class="tab" data-content="projSection"><a href="#" class="icon-home3"> Home</a></li>
+          <!-- <li class="tab" data-content="projSection"><a href="#" class="icon-home3"> Home</a></li> -->
+          <li class="tab" data-content="projSection"><a href="#" class="icon-stack"> Projects</a></li>
           <li class="tab" data-content="about"><a href="#" class="icon-profile"> About</a></li>
-          <li class="tab" data-content="projects"><a href="#" class="icon-stack"> Projects</a></li>
         </ul>
       </nav>
     </header>
@@ -56,35 +58,42 @@
           <select id="tech-filter">
             <option value="">-- Filter by Technology --</option>
           </select>
+          <div id="projectsContainer">
+          </div>
         </div>
 
-</section>
-<section id="about" class="tab-content">
-  <header>
-    about
-  </header>
-  <section>
-    <h1>read about my background</h1>
-    <ul>
-      <li>Education: BA, MBA, Coding Bootcamp</li>
-      <li>Certifications: PMP, Agile</li>
-      <li class="icon-folder-download">Download my resume - link to be added</li>
-    </ul>
-    </section>
-  </section>
-  </main>
-  <footer>
-    &copy; 2017  | danielle w. beyer | do what challenges you
-  </footer>
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.11/handlebars.min.js"></script>
-  <!-- <script type="text/javascript" src="scripts/projects.js"></script> -->
-  <script type="text/javascript" src="scripts/portfolio.js"></script>
-  <script type="text/javascript" src="scripts/projectView.js"></script>
-  <script>
-  console.log("run fetch all");
-  Project.fetchAll(projectView.initIndexPage);
-  </script>
-</body>
+      </section>
+      <section id="about" class="tab-content">
+        <section>
+          <h1>contact me</h1>
+          <ul>
+            <li>voice: 602.317.8383</li>
+            <li>email: dwishnuff@gmail.com</li>
+          </ul>
+        </section>
+        <section>
+          <h1>my background</h1>
+          <ul>
+            <li>education: ba, mba, coding bootcamp</li>
+            <li>certifications: pmp, agile</li>
+            <li class="icon-folder-download">download my resume - link to be added</li>
+          </ul>
+        </section>
+      </section>
+    </main>
+    <footer>
+      &copy; 2017  | danielle w. beyer | do what challenges you
+    </footer>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.19.2/moment.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.11/handlebars.min.js"></script>
+    <!-- <script type="text/javascript" src="scripts/projects.js"></script> -->
+    <script type="text/javascript" src="scripts/portfolio.js"></script>
+    <script type="text/javascript" src="scripts/projectView.js"></script>
+    <script>
+    console.log("run fetch all");
+    Project.fetchAll(projectView.initIndexPage);
+    </script>
+  </body>
 
-</html>
+  </html>
