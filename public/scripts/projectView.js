@@ -41,16 +41,16 @@ projectView.handleTechFilter = function () {
   })
 }
 
-projectView.handleMainNav = function() {
-
-  $(".tab").on("click", function() {
-    var clickedNavItem = $(this).data("content");
-    $(".tab-content").hide();
-    $('#' + clickedNavItem).show();
-  })
-
-  $('.main-nav .tab:first').click(); // Let's now trigger a click on the first .tab element, to set up the page.
-};
+// projectView.handleMainNav = function() {
+//
+//   $(".tab").on("click", function() {
+//     var clickedNavItem = $(this).data("content");
+//     $(".tab-content").hide();
+//     $('#' + clickedNavItem).show();
+//   })
+//
+//   $('.main-nav .tab:first').click(); // Let's now trigger a click on the first .tab element, to set up the page.
+// };
 
 projectView.setTeasers = function() {
   $('.projSummary *:nth-of-type(n+2)').hide(); // Hide elements beyond the first 2 in any article body.
@@ -77,5 +77,5 @@ projectView.initIndexPage = function() {
   projectView.setTeasers();
   projectView.populateFilters();
   projectView.handleTechFilter();
-  projectView.handleMainNav();
+  // projectView.handleMainNav();
 };
