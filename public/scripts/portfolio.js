@@ -15,9 +15,9 @@ Project.prototype.getTechnologies = function () {
 Project.prototype.toHtml = function() {
   //handlebars template:
   const templateFiller = Handlebars.compile($('#projects-template').html());
-console.log(this.publishedOn);
-var publishedDate = new Date(this.publishedOn);
-this.publishedDate = moment(this.publishedOn).format("Do MMM YY");
+  console.log(this.publishedOn);
+  var publishedDate = new Date(this.publishedOn);
+  this.publishedDate = moment(this.publishedOn).format("Do MMM YY");
   this.daysAgo = parseInt((new Date() - new Date(this.publishedOn))/60/60/24/1000);
   this.publishStatus =  ` (${this.daysAgo} days ago)`;
 

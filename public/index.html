@@ -47,8 +47,8 @@
 
         <ul>
           <!-- <li class="tab" data-content="projSection"><a href="#" class="icon-home3"> Home</a></li> -->
-          <li class="tab" data-content="projSection"><a href="#" class="icon-stack"> Projects</a></li>
-          <li class="tab" data-content="about"><a href="#" class="icon-profile"> About</a></li>
+          <li class="tab" data-content="projSection"><a href="/" class="icon-stack"> Projects</a></li>
+          <li class="tab" data-content="about"><a href="/about" class="icon-profile"> About</a></li>
         </ul>
       </nav>
     </header>
@@ -76,7 +76,7 @@
           <ul>
             <li>education: ba, mba, coding bootcamp</li>
             <li>certifications: pmp, agile</li>
-            <li class="icon-folder-download">download my resume - link to be added</li>
+            <li> download my resume - link to be added <span class="icon-folder-download"></span></li>
           </ul>
         </section>
       </section>
@@ -87,9 +87,13 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.19.2/moment.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.11/handlebars.min.js"></script>
-    <!-- <script type="text/javascript" src="scripts/projects.js"></script> -->
+    <script src="https://cdn.rawgit.com/visionmedia/page.js/master/page.js"></script>
+    <script type="text/javascript" src="scripts/projects.js"></script> -->
     <script type="text/javascript" src="scripts/portfolio.js"></script>
     <script type="text/javascript" src="scripts/projectView.js"></script>
+    <script src="/scripts/controllers/projectController.js"></script>
+    <script src="/scripts/controllers/aboutController.js"></script>
+    <script src="/scripts/controllers/routes.js"></script>
     <script>
     console.log("run fetch all");
     Project.fetchAll(projectView.initIndexPage);
