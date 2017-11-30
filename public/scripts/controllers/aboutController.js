@@ -3,9 +3,9 @@
 (function(module) {
   const aboutController = {};
 
-    aboutController.index = function() {
-      $('.tab-content').hide();
-      $('#about').show();
+    aboutController.index = () => {
+      $('#about').show().siblings().hide();
+        repos.requestRepos(repoView.index);
     };
 
 
